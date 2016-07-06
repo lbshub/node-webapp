@@ -1,6 +1,4 @@
-SPA web App (cnblogs)
-
-## 介绍
+## SPA web App (cnblogs)
 
 一个简单的移动端单页应用 ，使用 Node.js + Backbone 组合. （数据抓取于www.cnblogs.com）
 
