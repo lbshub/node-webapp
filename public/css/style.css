@@ -1,0 +1,413 @@
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, optgroup, option, p, pre, select, td, textarea, th, ul {
+	margin: 0;
+	padding: 0;
+    /*-webkit-tap-highlight-color: transparent;*/
+}
+
+ul, li {
+	list-style: none;
+}
+
+a:visited {
+	color: #606;
+}
+
+a {
+	color: #00C;
+	text-decoration: none;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-size: 14px;
+	color: #333;
+	font-family: STHeiti-Light,'Hiragino Sans GB','Microsoft Yahei',Arial;
+	background-color: #F4EEE4;
+	overflow-x: hidden;
+}
+
+.app {
+	width: 100%;
+	min-height: 100%;
+	position: relative;
+	/*overflow: hidden;*/
+}
+
+.header, .detail-header {
+	background: #ff7a18;
+	height: 50px;
+	line-height: 50px;
+	position: relative;
+}
+
+.detail-header {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+}
+
+.detail-header-box {
+	height: 50px;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+
+.footer {
+	padding: 15px 0;
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+}
+
+.back, .title, .search {
+	position: absolute;
+	top: 0;
+	height: 50px;
+}
+
+.back {
+	left: 0;
+	width: 40px;
+	padding-left: 12px;
+	text-align: left;
+}
+
+.i-back {
+	position: absolute;
+	left: 12px;
+	top: 15px;
+	width: 20px;
+	height: 20px;
+	background: url(../images/i-back.jpg) 50% no-repeat;
+}
+
+.title {
+	left: 52px;
+	right: 52px;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+}
+
+.detail-header .title {
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.search {
+	right: 0;
+	width: 40px;
+	padding-right: 12px;
+	text-align: right;
+}
+
+.i-search {
+	position: absolute;
+	right: 12px;
+	top: 15px;
+	width: 20px;
+	height: 20px;
+	background: url(../images/i-search.jpg) 0 50% no-repeat;
+}
+
+.nav {
+	width: 100%;
+	height: 44px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.nav ul {
+	/*display: box; display:-webkit-box;*/
+}
+
+.nav li {
+	/*box-flex: 1; -webkit-box-flex: 1; */
+	float: left;
+	width: 25%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	text-align: center;
+	padding-top: 2px;
+	border-bottom: 2px solid #eae3d3
+}
+
+.nav li.current {
+	color: #dd5114;
+	font-weight: bold;
+	border-bottom: 2px solid #f5682b;
+}
+
+.list-content {
+	padding: 0 8px;
+	min-height: 50%;
+	overflow: hidden;
+}
+
+.list-content li {
+	margin: 10px 0;
+	padding: 8px;
+	background: #fff;
+}
+
+.t-title {
+	padding-bottom: 5px;
+	font: 600 18px/26px Arial,Helvetica,sans-serif;
+}
+
+.t-content {
+	font: 14px/22px Arial,Helvetica,sans-serif;
+}
+
+.t-about {
+	font: 13px/21px Arial,Helvetica,sans-serif;
+	color: #999;
+}
+
+.t-about i {
+	font-style: normal;
+	padding-right: 5px;
+}
+
+.list-more {
+	text-align: center;
+	margin: 10px 8px;
+	padding: 10px 0;
+	background: #fff;
+	border-radius: 3px;
+	color: #666;
+}
+
+.detail-content {
+	overflow: hidden;
+	padding: 15px 10px;
+	background: #fff;
+	font: 14px/24px Arial,Helvetica,sans-serif;
+}
+
+.detail-content h1 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.detail-content h2 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.detail-content h3 {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.detail-content p {
+	margin-bottom: 10px;
+}
+
+.detail-content img {
+	max-width: 100%;
+}
+
+.loading {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	/*right: 0;*/
+	/*bottom: 0;*/
+	z-index: 99;
+	background: rgba(0,0,0,0);
+	color: #fff;
+}
+
+.loading-text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 86px;
+	height: 86px;
+	line-height: 86px;
+	margin: -43px 0 0 -43px;
+	background: rgba(0,0,0,.65);
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.page-list, .page-detail {
+	padding-bottom: 10px;
+}
+
+.top-search {
+	background: #fff;
+	position: absolute;
+	left: 12px;
+	right: 65px;
+	top: 5px;
+	bottom: 5px;
+}
+
+.top-search input {
+	position: absolute;
+	left: 0;
+	top: 6px;
+	padding: 0 5px;
+	-webkit-box-sizing: border-box;
+	background: #fff;
+	border: 0;
+	outline: 0;
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	font-size: 18px;
+	color: #333;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.top-button {
+	position: absolute;
+	top: 0;
+	height: 50px;
+	right: 0;
+	width: 65px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+}
+
+.top-button span{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* ----------------------------------------------------- */
+
+.animate-pt {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	z-index: 1;
+}
+
+/* ----------------------------------------------------- */
+
+/* forward start */
+@-webkit-keyframes moveFormRight {
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@keyframes moveFormRight {
+	
+	to {
+		transform: translateX(0);
+	}
+}
+
+.animate-moveFormRight {
+	-webkit-animation: moveFormRight .4s ease both;
+	animation: moveFormRight .4s ease both;
+	transform: translateZ(0);
+}
+
+.moveFormRight {
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+@-webkit-keyframes moveToLeft {
+	to {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@keyframes moveToLeft {
+	
+	to {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+.animate-moveToLeft {
+	-webkit-animation: moveToLeft .4s ease both;
+	animation: moveToLeft .4s ease both;
+	transform: translateZ(0);
+}
+
+.moveToLeft {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+/* forward end */
+
+/* ----------------------------------------------------- */
+
+/* back start */
+@-webkit-keyframes moveFormLeft {
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@keyframes moveFormLeft {
+	
+	to {
+		transform: translateX(0);
+	}
+}
+
+.animate-moveFormLeft {
+	-webkit-animation: moveFormLeft .4s ease both;
+	animation: moveFormLeft .4s ease both;
+	transform: translateZ(0);
+}
+
+.moveFormLeft {
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+@-webkit-keyframes moveToRight {
+	to {
+		-webkit-transform: translateX(100%);
+	}
+}
+
+@keyframes moveToRight {
+	
+	to {
+		-webkit-transform: translateX(100%);
+	}
+}
+
+.animate-moveToRight {
+	-webkit-animation: moveToRight .4s ease both;
+	animation: moveToRight .4s ease both;
+	transform: translateZ(0);
+}
+
+.moveToRight {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+/* back end */

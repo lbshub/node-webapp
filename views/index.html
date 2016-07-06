@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+	
+	
+		<div class="app">
+			<% if (type != 'search') { %>
+				<div class="page-list">
+					<header class="header">
+						<div class="back" data-target="back">
+					        <i class="i-back"></i>
+					    </div>
+					    <div class="title"><%= title %></div>
+					    <div class="search" data-target="search">
+					        <i class="i-search"></i>
+					    </div>
+					</header>
+					<nav class="nav">
+						<ul>
+							<li <% if (type == 'blog') { %> class="current"  <% } %> data-target="blog">博客</li>
+						    <li <% if (type == 'good') { %> class="current"  <% } %> data-target="good">精华</li>
+						    <li <% if (type == 'rank') { %> class="current"  <% } %> data-target="rank">48小时</li>
+						    <li <% if (type == 'news') { %> class="current"  <% } %> data-target="news">新闻</li>
+						</ul>
+					</nav>
+					<ul class="list-content"></ul>
+					<% if (type == 'blog') { %> <div class="list-more" data-target="more">点击加载更多</div> <% } %>
+				</div>
+			<% } %>
+		</div>
+
+	    <div class="loading">
+	        <div class="loading-text">正在加载</div>
+		</div>
+	
+
+	<script type="text/html" id="list">
+		{{each list as value}} 
+		    <li data-target="/{{type}}/{{value.id}}" data-link="{{value.link}}">
+		    	<h3 class="t-title">{{value.title}}</h3>
+		    	<div class="t-content">{{value.summary}}</div>
+		    	<p class="t-about"><i>{{value.author}}</i><i>{{value.time}}</i><i>评论({{value.comment}})</i><i>阅读({{value.view}})</i></p>
+		    </li>
+		{{/each}}
+	</script>
+	<script type="text/html" id="template-list">
+		<header class="header">
+			<div class="back" data-target="back">
+		        <i class="i-back"></i>
+		    </div>
+		    <div class="title">{{title}}</div>
+		    <div class="search" data-target="search">
+		        <i class="i-search"></i>
+		    </div>
+		</header>
+		<nav class="nav">
+			<ul>
+				<li {{if isBlog}} class="current" {{/if}} data-target="blog">博客</li>
+			    <li {{if isGood}} class="current" {{/if}} data-target="good">精华</li>
+			    <li {{if isRank}} class="current" {{/if}} data-target="rank">48小时</li>
+			    <li {{if isNews}} class="current" {{/if}} data-target="news">新闻</li>
+			</ul>
+		</nav>
+		<ul class="list-content">
+			{{include 'list'}}
+		</ul>
+		{{if isBlog}} <div class="list-more" data-target="more">点击加载更多</div> {{/if}}
+	</script>
+	<script type="text/html" id="template-detail">
+		<header class="detail-header">
+			<div class="back" data-target="back">
+		        <i class="i-back"></i>
+		    </div>
+		    <div class="title">{{title}}</div>
+		</header>
+		<div class="detail-header-box"></div>
+		<div class="detail-content">{{#content}}</div>
+	</script>
+	<script type="text/html" id="template-search">
+		<header class="header">
+		    <div class="top-search"><input type="text" placeholder="请输入" id="i-text" /></div>
+		    <div class="top-button">
+		    	<span class="btn-back" data-target="back">取消</span>
+		    	<span class="btn-search">搜索</span>
+		    </div>
+		</header>
+		<div class="search-content"></div>
+	</script>
+	<script type="text/javascript" src="/js/lib.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>
